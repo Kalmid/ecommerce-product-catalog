@@ -1,7 +1,8 @@
-// src/pages/Register.js
+//register
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../services/api';
+import '../styles.css';
 
 function Register() {
   const [form, setForm] = useState({ username: '', email: '', password: '' });
@@ -23,16 +24,39 @@ function Register() {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="name" name="username" placeholder="Username" onChange={handleChange} required />
-        <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-        <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Register</button>
-      </form>
+    <div className="register-container">
+      <div className="register-card">
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <select name="role" onChange={handleChange}>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <input 
+          type="name" 
+          name="username" 
+          placeholder="Username" 
+          onChange={handleChange} required />
+          <input 
+          name="email" 
+          type="email" 
+          placeholder="Email" 
+          onChange={handleChange} required />
+          <input 
+          name="password" 
+          type="password" 
+          placeholder="Password" 
+          onChange={handleChange} required />
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div>
   );
 }
 
 export default Register;
+
+
+
+
+

@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import ProductList from './pages/ProductList';
 import Navbar from './components/Navbar';
 import AdminDashboard from './pages/AdminDashboard';
+import "./styles.css";
 
 function App() {
   return (
@@ -14,10 +15,15 @@ function App() {
         <Route path="/" element={<ProductList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path='/admin' element={<AdminDashboard />} />
+        <Route path='/admin/products' element={<AdminDashboard />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
+
+
+

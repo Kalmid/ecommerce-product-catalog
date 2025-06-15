@@ -1,4 +1,4 @@
-// src/services/auth.js
+
 
 export const isAuthenticated = () => {
   return !!localStorage.getItem('token');
@@ -11,3 +11,7 @@ export const getToken = () => {
 export const logout = () => {
   localStorage.removeItem('token');
 };
+
+
+
+

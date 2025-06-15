@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../services/api';
+import '../styles.css';
 
 function Login() {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -23,15 +24,28 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-        <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Login</button>
-      </form>
+    <div className="login-container">
+      <div className="login-card">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <input 
+          name="email" 
+          type="email" 
+          placeholder="Email" 
+          onChange={handleChange} required />
+          <input 
+          name="password" 
+          type="password" 
+          placeholder="Password" 
+          onChange={handleChange} required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
   );
 }
 
 export default Login;
+
+
+
