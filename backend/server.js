@@ -19,7 +19,6 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 
-// MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

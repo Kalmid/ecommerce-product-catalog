@@ -1,7 +1,5 @@
-// controllers/productController.js
 const Product = require('../models/Product');
 
-// Create product (admin only)
 exports.createProduct = async (req, res) => {
   try {
     const product = new Product(req.body);
@@ -12,7 +10,6 @@ exports.createProduct = async (req, res) => {
   }
 };
 
-// Get all products (with optional filtering/search)
 exports.getProducts = async (req, res) => {
   try {
     const { category, search } = req.query;
@@ -28,7 +25,6 @@ exports.getProducts = async (req, res) => {
   }
 };
 
-// Get single product
 exports.getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -39,7 +35,6 @@ exports.getProductById = async (req, res) => {
   }
 };
 
-// Update product (admin only)
 exports.updateProduct = async (req, res) => {
   try {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -50,7 +45,6 @@ exports.updateProduct = async (req, res) => {
   }
 };
 
-// Delete product (admin only)
 exports.deleteProduct = async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
