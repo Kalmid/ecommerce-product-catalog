@@ -16,6 +16,7 @@ function Login() {
     e.preventDefault();
     try {
       const res = await API.post('/auth/login', form);
+      localStorage.setItem('role', res.data.role);
       localStorage.setItem('token', res.data.token);
       navigate('/');
     } catch (err) {

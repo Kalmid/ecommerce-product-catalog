@@ -1,4 +1,3 @@
-//admindashboard
 import React, { useEffect, useState, useCallback } from 'react';
 import API from '../services/api';
 import '../styles.css';
@@ -9,8 +8,10 @@ function AdminDashboard() {
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState({ name: '', description: '', price: '', category: '', imageUrl: '' });
   const [editingProduct, setEditingProduct] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   const fetchProducts = useCallback(async () => {
+
     try {
       const res = await API.get(`/products?search=${search}`);
       setProducts(res.data);
@@ -22,6 +23,19 @@ function AdminDashboard() {
    useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
+
+   useEffect(() => {
+  const fetchCategories = async () => {
+    try {
+      const res = await API.get('/categories');
+      setCategories(res.data);
+    } catch (err) {
+      console.error('Failed to load categories', err);
+    }
+  };
+
+  fetchCategories();
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -106,6 +120,7 @@ function AdminDashboard() {
             <tr>
               <th className="">Image</th>
               <th className="">Name</th>
+              <th className="">Description</th>
               <th className="">Price</th>
               <th className="">Category</th>
               <th className="">Actions</th>
@@ -120,6 +135,7 @@ function AdminDashboard() {
                   )}
                 </td>
                 <td className="">{p.name}</td>
+                <td className=''>{p.description}</td>
                 <td className="">Rs. {p.price}</td>
                 <td className="">{p.category}</td>
                 <td className="">
@@ -182,13 +198,13 @@ function AdminDashboard() {
                 value={form.price}
                 required
               />
-              <input
-                name="category"
-                placeholder="Category"
-                onChange={handleChange}
-                value={form.category}
-                required
-              />
+              <select name="category" onChange={handleChange} required>
+                <option value="">Select Category</option>
+                  {categories.map((c) => (
+                <option key={c._id}>{c.name}</option>
+                ))}
+              </select>
+
               <input type="file" accept="image/*" onChange={handleImageUpload}/>
               <div className="admin-dashboard-modal-buttons">
                 <button
