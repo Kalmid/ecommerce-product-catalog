@@ -91,7 +91,6 @@ function AdminDashboard() {
     <div className="admin-dashboard-container">
       <h2 className="admin-dashboard-title">Admin Product Management</h2>
 
-      {/* Search and Add Button */}
       <div className="admin-dashboard-header">
         <input
           type="text"
@@ -113,7 +112,6 @@ function AdminDashboard() {
         </button>
       </div>
 
-      {/* Product Table */}
       <div className="overflow-x-auto">
         <table className="admin-dashboard-table">
           <thead className="">
@@ -169,7 +167,6 @@ function AdminDashboard() {
         </table>
       </div>
 
-      {/* Add/Edit Modal */}
       {modalOpen && (
         <div className="admin-dashboard-modal-overlay">
           <div className="admin-dashboard-modal">

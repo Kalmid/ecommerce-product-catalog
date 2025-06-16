@@ -6,7 +6,7 @@ import '../styles.css';
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, ] = useState('');
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -47,19 +47,18 @@ function ProductList() {
 
   return (
     <div className="product-page">
-      {/* <h2 className="text-2xl font-bold text-blue-600 text-center mt-4 mb-4">Product Catalog</h2> */}
-
+      
        <div className="search-bar-container">
         <select
-    value={selectedCategory}
-    onChange={(e) => setSelectedCategory(e.target.value)}
-    className=""
-  >
-    <option value="">All Categories</option>
-    {categories.map((cat, index) => (
-      <option key={index} value={cat.name || cat}>{cat.name || cat}</option>
-    ))}
-  </select>
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          className=""
+        >
+          <option value="">All Categories</option>
+            {categories.map((cat, index) => (
+            <option key={index} value={cat.name || cat}>{cat.name || cat}</option>
+            ))}
+        </select>
       </div>
 
       <div className="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

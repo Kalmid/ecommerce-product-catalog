@@ -199,7 +199,7 @@
 }
 
 
-/* Container for the whole product list */
+/* product list */
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -226,7 +226,7 @@ h2{
 /* Style individual cards inside the list */
 .product-list ul > li {
   background-color: #ffffff;
-  border: 1px solid #e5e7eb; /* light gray border */
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   width: 250px;
@@ -240,7 +240,7 @@ h2{
 }
 
 
-/* src/components/ProductCard.css */
+/* ProductCard */
 .product-card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -351,19 +351,19 @@ h2{
 }
 
 .search-bar-container select:focus {
-  border-color: #3b82f6; /* Tailwind blue-500 */
+  border-color: #3b82f6;
   box-shadow: 0 0 6px #3b82f6aa;
   outline: none;
   background-color: #f9fbff;
 }
 
-/* Optional - Style the option text */
+/* Style the option text */
 .search-bar-container option {
   font-size: 16px;
 }
 
 
-/* Login.css */
+/* Login */
 .login-container {
   display: flex;
   justify-content: center;
@@ -422,7 +422,7 @@ h2{
   background-color: #1d4ed8;
 }
 
-/* Register.css */
+/* Register */
 .register-container {
   display: flex;
   justify-content: center;
@@ -483,7 +483,7 @@ h2{
   background-color: #059669;
 }
 
-/* AddCategory.css */
+/* AddCategory */
 
 .add-category-container {
   max-width: 400px;
@@ -517,7 +517,7 @@ h2{
 }
 
 .add-category-input:focus {
-  border-color: #3b82f6; /* blue tint */
+  border-color: #3b82f6; 
   outline: none;
   box-shadow: 0 0 5px #3b82f6aa;
 }
